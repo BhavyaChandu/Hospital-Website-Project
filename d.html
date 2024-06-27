@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+    <style>
+        .size-box {
+            display: inline-block;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .size-box.selected {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Product</h1>
+    <form action="addProductAction.jsp" method="post">
+        Name: <input type="text" name="name"><br>
+        Description: <input type="text" name="description"><br>
+        Sizes: <br>
+        <div class="size-box" onclick="selectSize(this, 'Small')">Small</div>
+        <div class="size-box" onclick="selectSize(this, 'Medium')">Medium</div>
+        <div class="size-box" onclick="selectSize(this, 'Large')">Large</div>
+        <input type="hidden" name="selectedSize" id="selectedSize">
+        <input type="submit" value="Add Product">
+    </form>
+
+    <script>
+        function selectSize(element, size) {
+            var selectedSizes = document.querySelectorAll('.size-box.selected');
+            selectedSizes.forEach(function(box) {
+                box.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            document.getElementById('selectedSize').value = size;
+        }
+    </script>
+</body>
+</html>

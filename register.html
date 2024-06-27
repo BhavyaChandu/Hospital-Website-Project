@@ -1,0 +1,159 @@
+<html>
+    <head>
+        <title>REGISTER HERE</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <script>
+            function registrationValidation(){
+                var fname=document.getElementById('first_name').value;
+                var lname=document.getElementById('last_name').value;
+                if(fname==""){
+                    document.getElementById('first_name_error').innerHTML="enter valid name";
+                    document.getElementById('first_name_error').style.color="red";
+                 }  
+                if(lname==""){
+                    document.getElementById('last_name_error').innerHTML="enter valid name";
+                    document.getElementById('last_name_error').style.color="red";
+                }
+            var user=document.getElementById('username').value;
+            if(user==""){
+                document.getElementById('username_error').innerHTML="enter valid credentials";
+                document.getElementById('username_error').style.color="red";
+                }
+            var pwd=document.getElementById('password').value;
+            if(pwd==""){
+                document.getElementById('password_error').innerHTML="enter your password";
+                document.getElementById('password_error').style.color="red";
+            }
+            var cpwd=document.getElementById('confirm').value;
+            if(cpwd==""){
+                document.getElementById('confirm_error').innerHTML="enter password";
+                document.getElementById('confirm_error').style.color="red";
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        function firstName(){
+           
+            let x=document.getElementById('first_name').value;
+            if(x==""){
+                document.getElementById("fname_error").innerHTML="invalid";
+                document.getElementById('fname_error').style.color="red";
+            }
+        }
+        function lastName(){
+            let y=document.getElementById('last_name').value;
+            if(y==""){
+                document.getElementById('l_error').innerHTML="invalid";
+                document.getElementById('l_error').style.color="red";
+            }
+        }
+        function userName(){
+            let z=document.getElementById('username').value;
+            if(z==""){
+                document.getElementById('user').innerHTML="invalid";
+                document.getElementById('user').style.color="red";
+            }
+        }
+        function passWord(){
+            let n=document.getElementById('password').value;
+            if(n==""){
+                document.getElementById('pd').innerHTML="invalid";
+                document.getElementById('pd').style.color="red";
+            }
+        }
+        function confirmPassword(){
+            let l=document.getElementById('confirm').value;
+            if(l==""){
+                document.getElementById('cp').innerHTML="invalid";
+                document.getElementById('cp').style.color="red";
+            }
+        }
+        
+           
+        </script>
+    <style>
+        .register{
+            width:400px;
+            position:relative;
+            top:90px;
+            left:450px;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="register">
+            <h5 style="padding-left: 110px;padding-bottom: 10px;">REGISTER HERE</h5>
+            <form class="registration" action="login.html">
+                <input class="form-control" id="first_name" onblur="firstName()"  name="first name" placeholder="enter your first name">
+                            <p id="first_name_error"></p>
+                <input class="form-control" id="last_name" onblur="lastName()" name="last name" placeholder="enter your last name">
+                            <p id="last_name_error"></p>
+                <input type="text" class="form-control"  id="mobile" name="mobile" placeholder="enter mobile number">
+                            <p></p>
+                <input class="form-control" id="mail"  name="email" placeholder="enter mail id">
+                            <p id="email_error"></p>
+        <!--Gender selection starts here-->
+        <div class="gender" style="display:flex">
+            <p style="margin-right: 20px;">Gender</p>
+        <fieldset id="setB">
+            <input id="setB_male" type="radio" name="setB_gender">
+                <label for="setB_male">Male</label>
+            <input id="setB_female" type="radio" name="setB_gender">
+                <label for="setB_female">Female</label>
+            <input id="setB_both" type="radio" name="setB_gender" checked>
+                <label for="setB_both">Prefer not to say</label>
+        </fieldset>
+        </div>
+
+
+
+                <input class="form-control" id="username" onblur="userName()" name="username" placeholder="enter username">
+                            <p id="username_error"></p>
+                <input class="form-control" id="password" onblur="passWord()" name="password" placeholder="enter password">
+                            <p id="password_error"></p>
+                <input class="form-control" id="confirm" onblur="confirmPassword()" name="confirm password" placeholder="confirm your password">
+                            <p id="confirm_error"></p>
+                <button class="form-control btn btn-success" type="submit" 
+                value="submit" onclick="return registrationValidation()">SUBMIT</button>
+                
+            </form>
+
+
+
+        </div>
+        <script>
+            document.getElementById("mobile").addEventListener("keypress", fn);
+            function fn(){
+                var a=event.which;
+                if(!((a>=48&&a<=57||(a==8)||(a==0)))){
+                    event.preventDefault();
+                }
+             }
+             document.getElementById("first_name").addEventListener("keypress",frn);
+             function frn(){
+                var f=event.which;
+                if(!((f>=65 && f<=90)||(f>=97 && f<=122))){
+                    event.preventDefault();
+                }
+             }
+             document.getElementById("last_name").addEventListener("keypress",lsn);
+             function lsn(){
+                var l=event.which;
+                if(!((l>=65 && l<=90)||(l>=97 && l<=122))){
+                    event.preventDefault();
+                }
+             }
+             function email(mail){
+                const mv='user@example.com';
+                if(email(mv)){
+                    document.getElementById('vv').innerHTML="";
+                }
+             }
+               
+        
+        
+        </script>
+    </body>
+</html>
